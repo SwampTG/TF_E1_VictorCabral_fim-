@@ -16,6 +16,8 @@
 USE TF_TemaE_VictorCabral;
 
 DROP TABLE recebe;
+DROP TABLE armazena;
+DROP TABLE vincula;
 DROP TABLE endereco;
 DROP TABLE PACIENTE;
 DROP TABLE VACINA;

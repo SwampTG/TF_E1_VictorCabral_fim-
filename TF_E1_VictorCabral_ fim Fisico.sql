@@ -102,3 +102,29 @@ CREATE TABLE recebe (
         REFERENCES VACINA (vacina_codigo)
         ON DELETE RESTRICT
 );
+
+CREATE TABLE armazena (
+	estabelecimento BIGINT NOT NULL,
+    vacina INT NOT NULL,
+    CONSTRAINT armazena_ESTABELECIMENTO_FK 
+		FOREIGN KEY (estabelecimento)
+        REFERENCES ESTABELECIMENTO (estabelecimento_id)
+        ON DELETE RESTRICT,
+	CONSTRAINT armazena_VACINA_FK
+		FOREIGN KEY (vacina)
+        REFERENCES VACINA (vacina_codigo)
+        ON DELETE RESTRICT
+);
+
+CREATE TABLE vincula (
+	sistema INT NOT NULL,
+    vacina INT NOT NULL,
+    CONSTRAINT vincula_SISTEMA_FK 
+		FOREIGN KEY (sistema)
+        REFERENCES SISTEMA (sistema_id)
+        ON DELETE RESTRICT,
+	CONSTRAINT vincula_VACINA_FK
+		FOREIGN KEY (vacina)
+        REFERENCES VACINA (vacina_codigo)
+        ON DELETE RESTRICT
+);
